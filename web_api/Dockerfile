@@ -1,5 +1,11 @@
-# syntax = docker/dockerfile:1
+# Construir imagen y cargar la aplicación
+#docker build -t hemorale14/ruby-web-api:1.0.0 .
+# Enviar la imagen a un repositorio público de Docker Hub
+#docker push hemorale14/ruby-web-api:1.0.0
+# Levantar la aplicación y hacer port-forwarding para visualizar la API en local sobre el puerto 9002
+#docker run --name my-ruby-web-api -dp 9002:3000 hemorale14/ruby-web-api:1.0.0
 
+# syntax = docker/dockerfile:1
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.2.2
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
